@@ -26,13 +26,17 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+// Added comment for testing danger intergration
 import Foundation
 import Alamofire
 
 enum Router: URLRequestConvertible {
   case users
-  
-  static let baseURLString = "https://api.stackexchange.com/2.2"
+
+  static let domain = "https://api.stackexchange.com/"
+  static let version = "2.2"
+
+  static let baseURLString = domain + version
   
   func asURLRequest() throws -> URLRequest {
     let path: String
