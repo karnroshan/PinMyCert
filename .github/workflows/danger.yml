@@ -9,7 +9,7 @@ steps:
 - name: Build
 run: swift build
 
-- name: Test
+- name: Test1
 run: swift test
 
 - name: Danger
