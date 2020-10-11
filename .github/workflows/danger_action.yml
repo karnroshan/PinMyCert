@@ -1,0 +1,20 @@
+name: iOS danger workflow
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@master
+    - name: Build
+      run: swift build
+    - name: Test
+      run: swift test
+    - name: Danger
+      run: danger-swift ci
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
